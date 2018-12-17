@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <aside>
+    <ul *ngFor="let component of componentList">
+      <li>
+        <a href="#" class="btn btn-info" (click)="selectTeam(component)">{{ component.article.title }}</a>
+      </li>
+    </ul>
+  </aside>
+  <img *ngIf="selectedTeam.image !== ''" src="{{ selectedTeam.article.image }}" alt="img">
+</div>
+
+
