@@ -17,10 +17,11 @@ export class SidebarComponent implements OnInit {
   public liverpool = new LiverpoolComponent;
   public real = new RealComponent;
   public componentList = [this.milan, this.ajax, this.bayern, this.liverpool, this.real];
+  public marked = 250;
 
   public selectedTeam = {
     title: "",
-    article: "",
+    description: "",
     author: "",
     image: ""
   };
@@ -30,8 +31,8 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectTeam(component) {
-    this.selectedTeam = component;
+  selectTeam(team) {
+    this.selectedTeam = team;
   }
 
 }

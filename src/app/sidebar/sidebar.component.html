@@ -1,12 +1,24 @@
 <div class="wrapper">
-  <aside>
+  <aside class="sidebar">
     <ul *ngFor="let component of componentList">
       <li>
-        <a href="#" class="btn btn-info" (click)="selectTeam(component)">{{ component.article.title }}</a>
+        <a href="#" class="btn btn-info" 
+        (click)="selectTeam(component)">{{ component.article.title }}</a>
       </li>
     </ul>
   </aside>
-  <img *ngIf="selectedTeam.image !== ''" src="{{ selectedTeam.article.image }}" alt="img">
+  <div class="team-info">
+    <div class="row">
+      <div class="col col-lg-4">
+        <img class="team-img" *ngIf="selectedTeam.image !== ''" 
+        src="{{ selectedTeam.article.image }}" alt="img">
+      </div>
+      <div class="col col-lg-8">
+        <h3 class="team-name">{{ selectedTeam.article.title }}</h3>
+        <p class="team-description">{{ selectedTeam.article.description }}</p>
+      </div>
+    </div>
+  </div>
 </div>
 
 
