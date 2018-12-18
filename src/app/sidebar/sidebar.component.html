@@ -40,15 +40,18 @@
           </select>
         </div>
       </div>
-      <div class="col col-lg-3">
+      <div class="col col-lg-2">
+        <button class="btn" (click)="toggleImage()">Hide/Show Image</button>
+      </div>
+      <div class="col col-lg-2">
         <button class="btn" (click)="increaseFont()">Increase Font</button>
       </div>
-      <div class="col col-lg-3">
+      <div class="col col-lg-2">
         <button class="btn" (click)="decreaseFont()">Decrease Font</button>
       </div>
     </div>
     <div class="row">
-      <div class="col col-lg-4">
+      <div class="col col-lg-4" [ngStyle]="{display: isImageShown ? 'block' : 'none'}">
         <img class="team-img" *ngIf="selectedTeam.article.image !== ''" 
         src="{{ selectedTeam.article.image }}" alt="img">
       </div>

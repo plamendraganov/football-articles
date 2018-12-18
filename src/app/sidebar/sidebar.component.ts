@@ -41,6 +41,8 @@ export class SidebarComponent implements OnInit {
 
   public textColor: string = "black";
 
+  public isImageShown: boolean = true;
+
   constructor() { }
 
   ngOnInit() {
@@ -57,6 +59,7 @@ export class SidebarComponent implements OnInit {
 
   selectTeam(team) {
     this.isTeamSelected = true;
+    this.isImageShown = true;
     this.fontSize = 18;
     document.getElementById('description').style.fontSize = this.fontSize + "px";
     this.selectedTeam = team;
@@ -72,13 +75,21 @@ export class SidebarComponent implements OnInit {
   }
 
   increaseFont() {
-    this.fontSize += 4;
-    document.getElementById('description').style.fontSize = this.fontSize + "px";
+    if (this.fontSize <= 30) {
+      this.fontSize += 4;
+      document.getElementById('description').style.fontSize = this.fontSize + "px";
+    }
   }
 
   decreaseFont() {
-    this.fontSize -= 4;
-    document.getElementById('description').style.fontSize = this.fontSize + "px";
+    if (this.fontSize > 10) {
+      this.fontSize -= 4;
+      document.getElementById('description').style.fontSize = this.fontSize + "px";
+    }
+  }
+
+  toggleImage() {
+    this.isImageShown = !this.isImageShown;
   }
 
 }
