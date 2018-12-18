@@ -3,20 +3,19 @@
 }
 
 .wrapper {
-    border: 2px solid green;
+    margin: 30px;
+    height: 100%;
 }
 
 .sidebar {
     display: inline-block;
-    border: 1px solid red;
     width: 20%;
 }
 
 .sidebar ul {
     padding: 0px;
-    margin: 0px;
+    margin-bottom: 6px;
     width: 100%;
-    border: 1px solid burlywood;
 }
 
 .sidebar ul li {
@@ -28,7 +27,8 @@
 
 .sidebar ul li a {
     width: 100%;
-    border-radius: 0px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .team-info {
@@ -36,7 +36,6 @@
     float: right;
     width: 70%;
     height: auto;
-    border: 1px solid blue;
     padding: 0px 20px;
 }
 
@@ -45,8 +44,18 @@
     height: 100%;
 }
 
-.team-description {
-    width: 100%;
-    padding: 0px 20px;
+.article-controls .btn {
+    margin-top: 25px;
 }
 
+.article-title {
+    margin: 0px 0px 20px 0px;
+}
+
+.article-description {
+    margin-top: 15px;
+}
+
+.col-lg-2 {
+    text-align: center
+}

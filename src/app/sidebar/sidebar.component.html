@@ -13,55 +13,55 @@
   </aside>
   <div class="team-info">
     <div class="row">
-    <div class="row" *ngIf="isTeamSelected">
-      <div class="col col-lg-3">
+      <div class="row article-controls" *ngIf="isTeamSelected">
+        <div class="col col-lg-3">
+            <div class="form-group">
+                <label for="textColor">Choose Text Color:</label>
+                <select class="form-control" id="textColor" [(ngModel)]="textColor">
+                  <option value="black">Black</option>
+                  <option value="red">Red</option>
+                  <option value="blue">Blue</option>
+                  <option value="green">Green</option>
+                  <option value="yellow">Yellow</option>
+                  <option value="purple">Purple</option>
+                </select>
+              </div>
+        </div>
+        <div class="col col-lg-3">
           <div class="form-group">
-              <label for="textColor">Choose Text Color:</label>
-              <select class="form-control" id="textColor" [(ngModel)]="textColor">
-                <option value="black">Black</option>
-                <option value="red">Red</option>
-                <option value="blue">Blue</option>
-                <option value="green">Green</option>
-                <option value="yellow">Yellow</option>
-                <option value="purple">Purple</option>
-              </select>
-            </div>
-      </div>
-      <div class="col col-lg-3">
-        <div class="form-group">
-          <label for="textColor">Choose Background Color:</label>
-          <select class="form-control" id="textColor" [(ngModel)]="textBackground">
-            <option value="white">White</option>
-            <option value="aqua">Aqua</option>
-            <option value="coral">Coral</option>
-            <option value="fuchsia">Fuchsia</option>
-            <option value="burlywood">Burlywood</option>
-            <option value="lightgreen">Lightgreen</option>
-          </select>
+            <label for="textColor">Choose Background Color:</label>
+            <select class="form-control" id="textColor" [(ngModel)]="textBackground">
+              <option value="white">White</option>
+              <option value="aqua">Aqua</option>
+              <option value="coral">Coral</option>
+              <option value="fuchsia">Fuchsia</option>
+              <option value="burlywood">Burlywood</option>
+              <option value="lightgreen">Lightgreen</option>
+            </select>
+          </div>
+        </div>
+        <div class="col col-lg-2">
+          <button class="btn" (click)="toggleImage()">Hide/Show Image</button>
+        </div>
+        <div class="col col-lg-2">
+          <button class="btn btn-info" (click)="increaseFont()">Increase Font</button>
+        </div>
+        <div class="col col-lg-2">
+          <button class="btn btn-warning" (click)="decreaseFont()">Decrease Font</button>
         </div>
       </div>
-      <div class="col col-lg-2">
-        <button class="btn" (click)="toggleImage()">Hide/Show Image</button>
+      <div class="row article-description">
+        <div class="col col-lg-4" [ngStyle]="{display: isImageShown ? 'block' : 'none'}">
+          <img class="team-img" *ngIf="selectedTeam.article.image !== ''" 
+          src="{{ selectedTeam.article.image }}" alt="img">
+        </div>
+        <div class="col col-lg-8" id="description" 
+        [ngStyle]="{'background-color': textBackground, color: textColor}">
+          <h3 class="article-title">{{ selectedTeam.article.title }}</h3>
+          <p>{{ visibleText }}</p>
+          <a href="#" *ngIf="!isAllTextVisible && isTeamSelected" (click)="showMoreText()">Read more...</a>
+        </div>
       </div>
-      <div class="col col-lg-2">
-        <button class="btn" (click)="increaseFont()">Increase Font</button>
-      </div>
-      <div class="col col-lg-2">
-        <button class="btn" (click)="decreaseFont()">Decrease Font</button>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col col-lg-4" [ngStyle]="{display: isImageShown ? 'block' : 'none'}">
-        <img class="team-img" *ngIf="selectedTeam.article.image !== ''" 
-        src="{{ selectedTeam.article.image }}" alt="img">
-      </div>
-      <div class="col col-lg-8" id="description" class="team-description" 
-      [ngStyle]="{'background-color': textBackground, color: textColor}">
-        <h3>{{ selectedTeam.article.title }}</h3>
-        <p>{{ visibleText }}</p>
-        <a href="#" *ngIf="!isAllTextVisible && isTeamSelected" (click)="showMoreText()">Read more...</a>
-      </div>
-    </div>
   </div>
   </div>
 </div>

@@ -76,14 +76,14 @@ export class SidebarComponent implements OnInit {
 
   increaseFont() {
     if (this.fontSize <= 30) {
-      this.fontSize += 4;
+      this.fontSize += 2;
       document.getElementById('description').style.fontSize = this.fontSize + "px";
     }
   }
 
   decreaseFont() {
-    if (this.fontSize > 10) {
-      this.fontSize -= 4;
+    if (this.fontSize > 12) {
+      this.fontSize -= 2;
       document.getElementById('description').style.fontSize = this.fontSize + "px";
     }
   }
