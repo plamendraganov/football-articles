@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { SidebarModule } from './sidebar/sidebar.module';
@@ -11,6 +12,7 @@ import { SidebarModule } from './sidebar/sidebar.module';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     SidebarModule
   ],
   providers: [],

@@ -1,3 +1,7 @@
+.title {
+    text-align: center;
+}
+
 .wrapper {
     border: 2px solid green;
 }
@@ -12,7 +16,7 @@
     padding: 0px;
     margin: 0px;
     width: 100%;
-    border: 1px solid purple;
+    border: 1px solid burlywood;
 }
 
 .sidebar ul li {
@@ -45,7 +49,3 @@
     padding: 0px 20px;
 }
 
-.team-name {
-    margin: 0px;
-    padding: 0px 20px;
-}

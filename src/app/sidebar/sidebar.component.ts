@@ -17,22 +17,68 @@ export class SidebarComponent implements OnInit {
   public liverpool = new LiverpoolComponent;
   public real = new RealComponent;
   public componentList = [this.milan, this.ajax, this.bayern, this.liverpool, this.real];
-  public marked = 250;
+
+  public isTeamSelected: boolean = false;
 
   public selectedTeam = {
-    title: "",
-    description: "",
-    author: "",
-    image: ""
+    article: {
+      title: "",
+      description: "",
+      author: "",
+      image: ""
+    }
   };
+
+  public numberOfSymbols: number = 250;
+
+  public visibleText: string = "";
+
+  public isAllTextVisible: boolean = false;
+
+  public fontSize: number = 18;
+
+  public textBackground: string = "white";
+
+  public textColor: string = "black";
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  checkLength() {
+    if (this.visibleText.length === this.selectedTeam.article.description.length) {
+      this.isAllTextVisible = true;
+    } else {
+      this.isAllTextVisible = false;
+    }
+  }
+
+
   selectTeam(team) {
+    this.isTeamSelected = true;
+    this.fontSize = 18;
+    document.getElementById('description').style.fontSize = this.fontSize + "px";
     this.selectedTeam = team;
+    this.numberOfSymbols = 250;
+    this.visibleText = this.selectedTeam.article.description.substring(0, this.numberOfSymbols);
+    this.checkLength();
+  }
+
+  showMoreText() {
+    this.numberOfSymbols += 250;
+    this.visibleText = this.selectedTeam.article.description.substring(0, this.numberOfSymbols);
+    this.checkLength();
+  }
+
+  increaseFont() {
+    this.fontSize += 4;
+    document.getElementById('description').style.fontSize = this.fontSize + "px";
+  }
+
+  decreaseFont() {
+    this.fontSize -= 4;
+    document.getElementById('description').style.fontSize = this.fontSize + "px";
   }
 
 }
