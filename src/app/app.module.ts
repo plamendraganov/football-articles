@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { ClubInfoComponent } from './club-info/club-info.component';
+import { ClubsModule } from './clubs/clubs.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ClubInfoComponent } from './club-info/club-info.component';
   imports: [
     BrowserModule,
     FormsModule,
-    SidebarModule
+    SidebarModule,
+    ClubsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
