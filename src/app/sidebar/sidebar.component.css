@@ -56,6 +56,11 @@
     margin-top: 15px;
 }
 
+.article-author {
+    font-weight: bold;
+    font-style: italic;
+}
+
 .col-lg-2 {
     text-align: center
 }
