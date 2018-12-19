@@ -58,7 +58,7 @@
         <div class="col col-lg-8" id="description" 
         [ngStyle]="{'background-color': textBackground, color: textColor}">
           <h3 class="article-title">{{ selectedTeam.article.title }}</h3>
-          <p>{{ visibleText }}</p>
+          <p>{{ visibleText }} <i>{{ selectedTeam.article.author }}</i></p>
           <a href="#" *ngIf="!isAllTextVisible && isTeamSelected" (click)="showMoreText()">Read more...</a>
         </div>
       </div>
