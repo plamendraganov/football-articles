@@ -4,6 +4,7 @@ import { MilanComponent } from './milan/milan.component';
 import { BayernComponent } from './bayern/bayern.component';
 import { LiverpoolComponent } from './liverpool/liverpool.component';
 import { RealComponent } from './real/real.component';
+import { BarcelonaComponent } from '../clubs/barcelona/barcelona.component';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,7 +17,8 @@ export class SidebarComponent implements OnInit {
   public bayern = new BayernComponent;
   public liverpool = new LiverpoolComponent;
   public real = new RealComponent;
-  public componentList = [this.milan, this.ajax, this.bayern, this.liverpool, this.real];
+  public barcelona = new BarcelonaComponent;
+  public componentList = [this.milan, this.ajax, this.bayern, this.liverpool, this.real, this.barcelona];
 
   public isTeamSelected: boolean = false;
 
