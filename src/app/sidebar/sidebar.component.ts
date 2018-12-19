@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AjaxComponent } from './ajax/ajax.component';
 import { MilanComponent } from './milan/milan.component';
 import { BayernComponent } from './bayern/bayern.component';
 import { LiverpoolComponent } from './liverpool/liverpool.component';
 import { RealComponent } from './real/real.component';
 import { BarcelonaComponent } from '../clubs/barcelona/barcelona.component';
+import { AjaxComponent } from '../clubs/ajax/ajax.component';
 
 @Component({
   selector: 'app-sidebar',
