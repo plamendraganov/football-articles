@@ -4,10 +4,10 @@
 
 <div class="wrapper">
   <aside class="sidebar">
-    <ul *ngFor="let component of componentList">
+    <ul *ngFor="let team of articleData">
       <li>
         <a href="#" class="btn btn-info" 
-        (click)="selectTeam(component)">{{ component.article.title }}</a>
+        (click)="selectTeam(team)">{{ team.title }}</a>
       </li>
     </ul>
   </aside>
@@ -52,14 +52,14 @@
       </div>
       <div class="row article-description">
         <div class="col col-lg-4" [ngStyle]="{display: isImageShown ? 'block' : 'none'}">
-          <img class="team-img" *ngIf="selectedTeam.article.image !== ''" 
-          src="{{ selectedTeam.article.image }}" alt="img">
+          <img class="team-img" *ngIf="selectedTeam.image !== ''" 
+          src="{{ selectedTeam.image }}" alt="img">
         </div>
         <div class="col col-lg-8" id="description" 
         [ngStyle]="{'background-color': textBackground, color: textColor}">
-          <h3 class="article-title">{{ selectedTeam.article.title }}</h3>
+          <h3 class="article-title">{{ selectedTeam.title }}</h3>
           <p>{{ visibleText }}</p>
-          <span class="article-author" *ngIf="isAllTextVisible">{{ selectedTeam.article.author }}</span>
+          <span class="article-author" *ngIf="isAllTextVisible">{{ selectedTeam.author }}</span>
           <a href="#" *ngIf="!isAllTextVisible && isTeamSelected" (click)="showMoreText()">Read more...</a>
         </div>
       </div>

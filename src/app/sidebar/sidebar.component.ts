@@ -5,6 +5,7 @@ import { LiverpoolComponent } from '../clubs/liverpool/liverpool.component';
 import { BayernComponent } from '../clubs/bayern/bayern.component';
 import { MilanComponent } from '../clubs/milan/milan.component';
 import { RealComponent } from '../clubs/real/real.component';
+import { RequestDataService } from '../request-data.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -23,12 +24,10 @@ export class SidebarComponent implements OnInit {
   public isTeamSelected: boolean = false;
 
   public selectedTeam = {
-    article: {
       title: "",
       description: "",
       author: "",
       image: ""
-    }
   };
 
   public numberOfSymbols: number = 250;
@@ -45,13 +44,17 @@ export class SidebarComponent implements OnInit {
 
   public isImageShown: boolean = true;
 
-  constructor() { }
+  public articleData;
+
+  constructor(private _requestDataService: RequestDataService) {
+    this._requestDataService.getData().subscribe(data => this.articleData = data);
+  }
 
   ngOnInit() {
   }
 
   checkLength() {
-    if (this.visibleText.length === this.selectedTeam.article.description.length) {
+    if (this.visibleText.length === this.selectedTeam.description.length) {
       this.isAllTextVisible = true;
     } else {
       this.isAllTextVisible = false;
@@ -66,13 +69,13 @@ export class SidebarComponent implements OnInit {
     document.getElementById('description').style.fontSize = this.fontSize + "px";
     this.selectedTeam = team;
     this.numberOfSymbols = 250;
-    this.visibleText = this.selectedTeam.article.description.substring(0, this.numberOfSymbols);
+    this.visibleText = this.selectedTeam.description.substring(0, this.numberOfSymbols);
     this.checkLength();
   }
 
   showMoreText() {
     this.numberOfSymbols += 250;
-    this.visibleText = this.selectedTeam.article.description.substring(0, this.numberOfSymbols);
+    this.visibleText = this.selectedTeam.description.substring(0, this.numberOfSymbols);
     this.checkLength();
   }
 
