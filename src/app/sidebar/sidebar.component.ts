@@ -6,6 +6,7 @@ import { BayernComponent } from '../clubs/bayern/bayern.component';
 import { MilanComponent } from '../clubs/milan/milan.component';
 import { RealComponent } from '../clubs/real/real.component';
 import { RequestDataService } from '../request-data.service';
+import { store } from '../store/store';
 
 @Component({
   selector: 'app-sidebar',
@@ -51,7 +52,17 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.updateFromStore();
+    // store.subscribe(() => {
+    //   this.updateFromStore()
+    // })
   }
+
+  // updateFromStore() {
+  //   const state = store.getState();
+  //   this.articleData = state;
+  //   console.log(this.articleData);
+  // }
 
   checkLength() {
     if (this.visibleText.length === this.selectedTeam.description.length) {
